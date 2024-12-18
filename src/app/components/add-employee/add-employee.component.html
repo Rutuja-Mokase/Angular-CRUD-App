@@ -1,0 +1,94 @@
+<div class="container mt-4">
+  <h2 class="text-center">Add Employee</h2>
+  <form
+    [formGroup]="employeeForm"
+    (ngSubmit)="onSubmit()"
+    class="form-container"
+  >
+    <!-- Name Field with Icon -->
+    <div class="form-group">
+      <label for="name">Name <span class="text-danger">*</span></label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+          <!-- Person Icon -->
+        </div>
+        <input
+          id="name"
+          formControlName="name"
+          type="text"
+          class="form-control"
+          placeholder="Enter name"
+        />
+      </div>
+    </div>
+
+    <!-- Role Field with Icon -->
+    <div class="form-group">
+      <label for="role">Role <span class="text-danger">*</span></label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="bi bi-briefcase"></i></span>
+          <!-- Briefcase Icon -->
+        </div>
+        <select id="role" formControlName="role" class="form-control">
+          <option value="" disabled>Select Role</option>
+          <option value="Developer">Developer</option>
+          <option value="Manager">Manager</option>
+          <option value="Tester">Tester</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- From Date Field with Icon -->
+    <div class="form-group">
+      <label for="fromDate">From Date <span class="text-danger">*</span></label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"
+            ><i class="bi bi-calendar-date"></i
+          ></span>
+          <!-- Calendar Icon -->
+        </div>
+        <input
+          id="fromDate"
+          formControlName="fromDate"
+          type="date"
+          class="form-control"
+          (change)="onFromDateChange()"
+        />
+      </div>
+    </div>
+
+    <!-- To Date Field with Icon -->
+    <div class="form-group">
+      <label for="toDate">To Date <span class="text-danger">*</span></label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"
+            ><i class="bi bi-calendar-date"></i
+          ></span>
+          <!-- Calendar Icon -->
+        </div>
+        <input
+          id="toDate"
+          type="date"
+          formControlName="toDate"
+          class="form-control"
+          [min]="minToDate"
+          (change)="validateDates()"
+        />
+      </div>
+    </div>
+
+    <div *ngIf="dateError" class="alert alert-danger">{{ dateError }}</div>
+
+    <button
+      type="submit"
+      class="btn btn-success mt-2"
+      [disabled]="employeeForm.invalid || dateError"
+    >
+      Add Changes
+    </button>
+  </form>
+</div>

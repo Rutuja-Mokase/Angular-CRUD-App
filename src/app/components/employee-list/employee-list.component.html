@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Employee List</h2>
+  <a routerLink="/add-employee" class="btn btn-success mb-3">Add Employee</a>
+  <table class="table table-striped" *ngIf="db.employees.length > 0">
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th>From Date</th>
+      <th>To Date</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let employee of db.employees">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.role }}</td>
+      <td>{{ employee.fromDate }}</td>
+      <td>{{ employee.toDate }}</td>
+      <td>
+        <a
+          [routerLink]="['/edit-employee', employee.id]"
+          class="btn btn-warning btn-sm"
+          >Edit</a
+        >
+        <button
+          class="btn btn-danger btn-sm"
+          (click)="deleteEmployee(employee.id)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </table>
+  <div *ngIf="db.employees.length === 0">No Employees Found</div>
+</div>

@@ -1,1 +1,132 @@
-/* You can add global styles to this file, and also import other style files */
+You can add global styles to this file, and also import other style files
+/* General body styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light gray background */
+  color: #212529;
+}
+
+/* Container for pages */
+.container {
+  max-width: 900px;
+  top: 99px;
+  position: absolute;
+
+  margin: 20px 200px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+form .form-control {
+  border-radius: 6px;
+}
+
+form .btn {
+  width: 100px;
+}
+
+/* Table styling */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: #ffffff; /* White text */
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Action buttons */
+.btn {
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+  color: #212529;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  color: #ffffff;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: #ffffff;
+}
+
+/* No data message */
+.alert-warning {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  form .btn {
+    width: 100%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  background: #1da1f2;
+  padding: 10px;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+}
+.title {
+  font-family: "Roboto-Font A/Font A12";
+  font-weight: 500;
+  line-height: 21.09px;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bolder;
+}
